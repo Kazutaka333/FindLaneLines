@@ -63,15 +63,13 @@ original image
 
 In order to draw a single line on the left and right lanes instead of many segments, I made the following modification to the
 draw_lines() function.
-1. Calculate 'a' and 'b' for each segment in terms of y = ax + b where 'a' and 'b' means slope and intersection on y axis.
-2. Check if 'a' (slope) is larger than 0.3 or smaller than -0.3. If it is not, exclude that 'a' from the later step of 
-calculation since flatter line is not the lane line we are looking for and set the weighted average line off.
-3. Multiply a and b by the length of the segment. This is for putting more weights on longer segments than shorter segments when
-it calculates the weighted average of a and b.
+1. Calculate 'a' and 'b' for the segments found by hough line transform in terms of y = ax + b where 'a' and 'b' means slope and intersection on y axis.
+2. Check if 'a' (slope) is larger than 0.3 or smaller than -0.3. If it is neither, exclude the segument from the later step of 
+calculation since too flat line is not the lane line we are looking for and set the weighted average line off.
+3. Multiply a and b by the length of the segment. This is for putting more weights on longer segments than shorter segments when it calculates the weighted average of a and b.
 4. Group each 'a' and 'b' into left lane and right lane.
 5. Take the weighted average of 'a' and 'b' in left lane and right lane group. 
-6. Draw two lines for left and right lane from the bottom of the image to the 2/5 of the image hight using y = ax + b calculated
-by the above steps.
+6. Draw two lines for left and right lane from the bottom of the image to the 2/5 of the image hight using y = ax + b calculated by the above steps.
 
 
 ### 2. Identify potential shortcomings with your current pipeline
@@ -80,6 +78,8 @@ As my method crops out the bottom half of the image by the trapezoid, I imagine 
 
 My algorithm always represents lanes as two straight lines no matter what. Apparently this cannot be sufficient when a car encounter a quick curve.
 
+In bad whether or road with shade, the grayscale value of each pixel could be much lower, which results that the lanes are corpped out through the current color masking.
 
 ### 3. Suggest possible improvements to your pipeline
 
+For the shaI would suggest use HSB space instead of RGB space for color masking. Since it's easier to select similar color with different brightness. That is, specifing small range of hue and somewhat wider range of saturation and brightness would easily extract the pixel of a cirtain color.
