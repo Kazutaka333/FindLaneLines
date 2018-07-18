@@ -13,7 +13,7 @@ When we drive, we use our eyes to decide where to go.  The lines on the road tha
 How to Run the Program
 ---
 
-**Step 1:** Set up the [CarND Term1 Starter Kit](https://github.com/udacity/CarND-Term1-Starter-Kit/blob/master/README.md7)
+**Step 1:** Set up the [CarND Term1 Starter Kit](https://github.com/udacity/CarND-Term1-Starter-Kit/blob/master/README.md)
 
 **Step 2:** Open the code in a Jupyter Notebook
 
