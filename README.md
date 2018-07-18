@@ -78,4 +78,4 @@ In bad whether or road with shade, the grayscale value of each pixel could be mu
 
 ### 3. Possible Solution
 
-For the shaI would suggest use HSB space instead of RGB space for color masking. Since it's easier to select similar color with different brightness. That is, specifing small range of hue and somewhat wider range of saturation and brightness would easily extract the pixel of a cirtain color.
+To adupt the different light condition, I would suggest use HSB space instead of RGB space for color masking. Since it's easier to select similar color with different brightness. That is, specifing small range of hue and somewhat wider range of saturation and brightness would easily extract the pixel of a cirtain color.
