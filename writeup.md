@@ -78,8 +78,8 @@ As my method crops out the bottom half of the image by the trapezoid, I imagine 
 
 My algorithm always represents lanes as two straight lines no matter what. Apparently this cannot be sufficient when a car encounter a quick curve.
 
-In bad whether or road with shade, the grayscale value of each pixel could be much lower, which results that the lanes are corpped out through the current color masking.
+In bad weather or road with shade, the grayscale value of each pixel could be much lower, which results that the lanes are corpped out through the current color masking.
 
 ### 3. Suggest possible improvements to your pipeline
 
-For the shaI would suggest use HSB space instead of RGB space for color masking. Since it's easier to select similar color with different brightness. That is, specifing small range of hue and somewhat wider range of saturation and brightness would easily extract the pixel of a cirtain color.
+To adapt the different light condition, I would suggest use HSB space instead of RGB space for color masking. Since it's easier to select similar color with different brightness. That is, specifing small range of hue and somewhat wider range of saturation and brightness would easily extract the pixel of a cirtain color.
